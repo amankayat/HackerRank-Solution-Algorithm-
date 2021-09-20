@@ -41,7 +41,8 @@ int migratory_birds(int a[],int len){
 	return 4;
 	else if(max_c==five)
 	return 5;
-	
+	else
+	return 0;
 }
 int main(){
 	int n;
