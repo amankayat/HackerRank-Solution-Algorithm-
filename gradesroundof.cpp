@@ -1,32 +1,46 @@
-#include<iostream>
-#include<stdio.h>
+#include <bits/stdc++.h>
+
 using namespace std;
-int *break_record(int scores[1000],int games){
-    int max=scores[0];
-    int min = scores[0];
-    int max_c =0,min_c=0;
-    static int c[10];
-    for(int i=0;i<games;i++){
-        if(scores[i]>max){
-            max=scores[i];
-            max_c++;
-        }else if(scores[i]<min){
-            min = scores[i];
-            min_c++;
+
+
+
+/*
+ * Complete the 'gradingStudents' function below.
+ *
+ * The function is expected to return an INTEGER_ARRAY.
+ * The function accepts INTEGER_ARRAY grades as parameter.
+ */
+
+int *roundoffgrade(int a[100],int n){
+    static int ar[100];
+    for(int i=0;i<n;i++){
+        if(a[i]>37){
+    
+        if((a[i]%5)==3){
+            int x= a[i]%5;
+            a[i]+=(x-1);
+        }else if((a[i]%5)==4){
+            a[i]+=1;
         }
     }
-    c[0]=max_c;
-    c[1]=min_c;
-    return c;
+    }
+for(int i=0;i<n;i++)
+        ar[i]=a[i];
+        
+return ar;
 }
 
+
 int main(){
-    int games,scores[1000];
-    cin>>games;
-    for(int i=0;i<games;i++)
-    cin>>scores[i];
+    int n,a[100];
+    int *result;
+    cin>>n;
+    for(int i=0;i<n;i++){
+        cin>>a[i];
+    }
+    result = roundoffgrade(a,n);
+    for(int i=0;i<n;i++){
+        cout<<result[i]<<"\n";
+    }
     
-    int *results = break_record(scores,games);
-    for(int i=0;i<2;i++)
-        cout<<results[i]<<" ";
 }
