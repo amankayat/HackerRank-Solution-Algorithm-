@@ -6,6 +6,8 @@ string ltrim(const string &);
 string rtrim(const string &);
 vector<string> split(const string &);
 
+//main code in function
+
 /*
  * Complete the 'hurdleRace' function below.
  *
