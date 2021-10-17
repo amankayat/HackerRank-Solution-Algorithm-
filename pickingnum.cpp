@@ -1,15 +1,15 @@
 #include<iostream>
 #include<stdio.h>
 #include<cmath>
+#include<vector>
 using namespace std;
-int pickingnumbers(int a[]){
-    int count=0;
+int pickingnumbers(vector<int> a){
+    
     int result=2;
     int freq[101]={0};
-    for(int i=0;a[i]!='\0';++i)
-    count++;
+   
     
-    for(int i=0;i<count;i++)
+    for(int i=0;i<a.size();i++)
     freq[a[i]]++;
     
     for(int j=1;j<=100;j++)
@@ -22,10 +22,13 @@ int main(){
     int n;
     cin>>n;
    
-    int a[100];
-    for(int i=0;i<n;i++)
-    cin>>a[i];
-
+    vector<int> a;
+    for(int i=0;i<n;i++){
+        int x;
+        cin>>x;
+        a.push_back(x);
+    }
+    
     int result = pickingnumbers(a);
     cout<<result;
     }
