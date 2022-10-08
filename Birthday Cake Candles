@@ -1,0 +1,23 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int i,n,max=INT_MIN,f;
+    cin>>n;
+    
+    int arr[n];
+    for(i=0;i<n;i++){
+        cin>>arr[i];
+        
+        if(arr[i]>max)
+        {
+            max=arr[i];
+            f=1;
+            continue;
+        }
+        if(max==arr[i])
+        f++;
+    }
+    cout<<f;
+}
